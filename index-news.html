@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name = "description" content="Сервис для анализа происходящих в мире событий">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./vendor/normalize.css">
+  <link rel="stylesheet" href="./page/index.css">
+  <link rel="icon" href="./images/Favicon.png">
+  <title>Сервис для анализа происходящих в мире событий</title>
+</head>
+<body>
+
+  <header calass="cover__header">
+    <!--Логотип как бэкграунд имедж-->
+    <div class="cover__search"> <!--Обертка для большой картинки-->
+      <div class="header__logo"></div> <!--для размещения логотипа белый-->
+      <nav class="header__navigation">
+        <ul>
+          <li class="navigation__li">
+            <a href="index-news.html" class="navigation__elem link">Главная</a> <!--Ссылки-->
+          </li>
+          <li class="navigation__li">
+            <a href="index-about-progect.html" class="navigation__elem navigation__elem_underline link">О проекте</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="search">
+        <h1 class="search__title">Что в мире творится?</h1>
+        <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+        <form class="info" name="info">
+          <label for="info__input">Введите тему новости</label>
+          <input required type="text" min="1" max="500" class="info__input">
+          <button class="info__btn">Искать</button>
+        </form>
+      </section>
+    </div>
+  </header>
+<!--Остновной раздел сайта================================================================-->
+  <main>
+    <div class="cover__results">
+      <h2 class="result__title">Результаты поиска</h2>
+      <a href="index-analitica.html" class="link__analytics link">Посмотреть аналитику &gt</a><!--Ссылка на страницу с аналитикой-->
+      <ul class="cards"><!--Самый большой блок с разными стилями====================================-->
+        <li class="card">
+          <div class="card__img"></div>
+          <p class="card__data">2 августа 2019</p>
+          <div>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+            <p class="card__label"><cite>Риа</cite></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="card__img"></div>
+          <p class="card__data">2 августа 2019</p>
+          <div>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+            <p class="card__label"><cite>Риа</cite></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="card__img"></div>
+          <p class="card__data">2 августа 2019</p>
+          <div>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+            <p class="card__label"><cite>Риа</cite></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="card__img"></div>
+          <p class="card__data">2 августа 2019</p>
+          <div>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+            <p class="card__label"><cite>Риа</cite></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="card__img"></div>
+          <p class="card__data">2 августа 2019</p>
+          <div>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+            <p class="card__label"><cite>Риа</cite></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="card__img"></div>
+          <p class="card__data">2 августа 2019</p>
+          <div>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+            <p class="card__label"><cite>Риа</cite></p>
+          </div>
+        </li>
+      </ul>
+      <button class="result__btn">
+        <p class="result__btn-text">Показать еще</p>
+      </button>
+      <div class="cards__searsc">
+        <p>идет поиск</p>
+      </div><!--Поиск карточек, спинер-->
+      <div сlass="cards__nothing-found">
+        <img class="nothing-found__img" src="images/not-found_v1.png" alt="Грустный смайлик">
+        <p class="nothing-found__mini-text">Ничего не найдено</p>
+        <p class="nothing-found__text">К сожалению по вашему запросу ничего не найдено.</p>
+      </div>
+    </div>
+
+<!--об авторе--------------------------------------------------------->
+    <div class="cover__about-author">
+      <section class="about-author">
+        <img class="about-author__photo-me" alt="фотография автора сайта" src="./images/image-03.png">
+        <div class="about-author__section">
+          <h2 class="about-author__title">Об авторе</h2>
+          <p class="about-author__text">Это блок с описаением автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владете.</p>
+          <p class="about-author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+
+        </div>
+      </section>
+    </div>
+  </main>
+<!--ПОДВАЛ===================================================================================-->
+  <footer class="cover__footer">
+    <section class="footer">
+      <div class="footer__block">
+        <div class="footer__block-link">
+          <a href="./index-news.html" class="footer__link link">Главная</a>
+          <a href="./index-about-progect.html" class="footer__link link">О проекте</a>
+          <a href="https://praktikum.yandex.ru" class="footer__link link">Яндекс.Практикум</a>
+        </div>
+        <div class="footer__block-icon">
+          <a href="https://www.facebook.com/profile.php?id=100014076708503" class="link"><img class="footer__icon" src="./images/iconmonstr-facebook-6.png" alt="иконка Фейсбука"></a>
+          <a href="https://github.com/Psihosomatika" class="link"><img class="footer__icon" src="./images/github.png" alt="иконка Гитхаба"></a>
+        </div>
+      </div>
+      <p class="footer__author">&copy 2020 Рукавишникова Диана</p>
+
+    </section>
+  </footer>
+</body>
+</html>
