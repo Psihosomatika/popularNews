@@ -52,6 +52,7 @@
     "articles": "^0.2.2",
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.4.1",
+    "flickity": "^2.2.1",
     "path": "^0.12.7"
   }
 }

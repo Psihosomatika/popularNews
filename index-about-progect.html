@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./vendor/normalize.css">
-    <link rel="stylesheet" href="./page/index.css">
+    <link rel="stylesheet" href="./page/index-about-progect.css">
+    <link rel="stylesheet" href="./node_modules/flickity/dist/flickity.css" media="screen">
     <link rel="icon" href="./images/Favicon.png">
     <title>О проекте</title>
   </head>
@@ -72,7 +73,19 @@
       </div>
       <section class="history">
         <h2 class="history__title">История коммитов из GitHub</h2>
-        <div> </div><!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР-->
+        <!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР -->
+        <div class="carousel" data-flickity='{ "groupCells": true, "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false}'>
+          <div class="carousel-cell">1</div>
+          <div class="carousel-cell">2</div>
+          <div class="carousel-cell">3</div>
+          <div class="carousel-cell">4</div>
+          <div class="carousel-cell">5</div>
+          <div class="carousel-cell">6</div>
+          <div class="carousel-cell">7</div>
+          <div class="carousel-cell">8</div>
+          <div class="carousel-cell">9</div>
+          <div class="carousel-cell">10</div>
+        </div>
         <button class="history__btn"><a class="history__link link" href="#">Открыть в GitHub</a></button>
       </section>
     </main>
@@ -94,6 +107,7 @@
 
       </section>
     </footer>
+    <script src="./node_modules/flickity/dist/flickity.pkgd.js"></script>
   </body>
 </html>
 
