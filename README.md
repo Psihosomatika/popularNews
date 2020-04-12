@@ -14,3 +14,6 @@ analitic - отображает количество новостей на за�
 npm install
 npm run build
 npm run dev
+
+Или просто посмотрите его по ссылке =)
+https://psihosomatika.github.io/popularNews/
