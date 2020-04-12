@@ -5,9 +5,8 @@
   <meta name = "description" content="Сервис для анализа происходящих в мире событий">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="./page/index-news.css">
-  <link rel="icon" href="./images/Favicon.png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <link rel="icon" href="<%=require('./images/Favicon.png').default%>" type="image/ico">
   <title>Сервис для анализа происходящих в мире событий</title>
 </head>
 <body>
@@ -21,10 +20,10 @@
             <nav class="nav>">
               <ul class="navigation">
                 <li class="navigation__li">
-                  <a href="index-news.html" class="navigation__link navigation__link_underline link">Главная</a> <!--Ссылки-->
+                  <a href="./index.html" class="navigation__link navigation__link_underline link">Главная</a> <!--Ссылки-->
                 </li>
                 <li class="navigation__li">
-                  <a href="about.html" class="navigation__link link">О проекте</a>
+                  <a href="./about.html" class="navigation__link link">О проекте</a>
                 </li>
               </ul>
             </nav>
@@ -33,7 +32,7 @@
             <h1 class="search__title">Что в мире творится?</h1>
             <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
             <form class="info" name="info">
-              <input required type="text" minlength="1" maxlength="500" placeholder="   Политика" class="info__input">
+              <input type="text" minlength="1" maxlength="500" placeholder="Политика" class="info__input" required>
               <button class="info__btn">Искать</button>
             </form>
           </section>
@@ -46,12 +45,12 @@
         <div class="result">
           <div class="result__block">
             <h2 class="result__title">Результаты поиска</h2>
-            <a href="index-analitica.html" class="link__analytics link">Посмотреть аналитику &gt;</a><!--Ссылка на страницу с аналитикой-->
+            <a href="./analitica.html" class="link__analytics link">Посмотреть аналитику &gt;</a><!--Ссылка на страницу с аналитикой-->
           </div>
           <ul class="cards"><!--Самый большой блок с разными стилями====================================-->
 
             <li class="card">
-              <img class="card__img" src="./images/image_08.png" alt="фон новостной картинки">
+              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
               <span class="card__data">2 августа 2019</span>
               <div>
                 <h3 class="card__title">Национальное достояние – парки</h3>
@@ -61,7 +60,7 @@
             </li>
 
             <li class="card">
-              <img class="card__img" src="./images/image_06.png" alt="фон новостной картинки">
+              <img class="card__img" src="<%=require('./images/image_06.png').default%>" alt="фон новостной картинки">
               <span class="card__data">2 августа 2019</span>
               <div>
                 <h3 class="card__title">Национальное достояние – парки</h3>
@@ -70,7 +69,7 @@
               </div>
             </li>
             <li class="card">
-              <img class="card__img" src="./images/image_07.png" alt="фон новостной картинки">
+              <img class="card__img" src="<%=require('./images/image_07.png').default%>" alt="фон новостной картинки">
               <span class="card__data">2 августа 2019</span>
               <div>
                 <h3 class="card__title">Национальное достояние – парки</h3>
@@ -79,7 +78,7 @@
               </div>
             </li>
             <li class="card">
-              <img class="card__img" src="./images/image_08.png" alt="фон новостной картинки">
+              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
               <span class="card__data">2 августа 2019</span>
               <div>
                 <h3 class="card__title">Национальное достояние – парки</h3>
@@ -88,7 +87,7 @@
               </div>
             </li>
             <li class="card">
-              <img class="card__img" src="./images/image_08.png" alt="фон новостной картинки">
+              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
               <span class="card__data">2 августа 2019</span>
               <div>
                 <h3 class="card__title">Национальное достояние – парки</h3>
@@ -97,7 +96,7 @@
               </div>
             </li>
             <li class="card">
-              <img class="card__img" src="./images/image_08.png" alt="фон новостной картинки">
+              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
               <span class="card__data">2 августа 2019</span>
               <div>
                 <h3 class="card__title">Национальное достояние – парки</h3>
@@ -116,7 +115,7 @@
 
           <div class="cards__nothing-found">
             <div class="nothing-found__img">
-              <img  src="./images/not-found_v1.png" alt="Грустный смайлик">
+              <img  src="<%=require('./images/not-found_v1.png').default%>" alt="Грустный смайлик">
             </div>
             <p class="nothing-found__mini-text">Ничего не найдено</p>
             <p class="nothing-found__text">К сожалению по вашему запросу ничего не найдено.</p>
@@ -128,7 +127,7 @@
       <div class="cover__about-author">
         <section class="about-author">
           <div class="about-author__photo-me">
-            <img  class="photo" alt="фотография автора сайта" src="./images/image-03.png">
+            <img  class="photo" alt="фотография автора сайта" src="<%=require('./images/image-03.png').default%>">
           </div>
           <div>
             <h2 class="about-author__title">Об авторе</h2>
@@ -143,8 +142,8 @@
       <section class="footer">
         <div class="footer__block">
           <div class="footer__block-link">
-            <a href="./index-news.html" class="footer__link link">Главная</a>
-            <a href="about.html" class="footer__link link">О проекте</a>
+            <a href="./index.html" class="footer__link link">Главная</a>
+            <a href="./about.html" class="footer__link link">О проекте</a>
             <a href="https://praktikum.yandex.ru" class="footer__link link">Яндекс.Практикум</a>
           </div>
           <div class="footer__block-icon">
@@ -152,10 +151,11 @@
             <a href="https://github.com/Psihosomatika" class="link"><svg width="22" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 .895C5.417.895.895 5.423.895 11c0 4.466 2.897 8.25 6.91 9.59.503.093.689-.217.689-.49 0-.242-.006-.875-.013-1.718-2.81.608-3.405-1.353-3.405-1.353-.46-1.166-1.123-1.476-1.123-1.476-.918-.627.068-.614.068-.614 1.011.074 1.551 1.042 1.551 1.042.9 1.545 2.364 1.098 2.94.838.094-.652.354-1.098.64-1.353-2.246-.254-4.603-1.123-4.603-4.993 0-1.105.39-2.004 1.042-2.711-.106-.255-.453-1.284.099-2.674 0 0 .85-.273 2.78 1.036A9.807 9.807 0 0111 5.783a9.843 9.843 0 012.531.341c1.93-1.309 2.78-1.036 2.78-1.036.551 1.39.204 2.42.098 2.674.646.707 1.036 1.606 1.036 2.71 0 3.884-2.363 4.734-4.615 4.988.36.31.689.93.689 1.873 0 1.353-.013 2.438-.013 2.773 0 .273.18.583.695.484 4.014-1.34 6.904-5.124 6.904-9.584C21.105 5.423 16.583.895 11 .895z" fill="#191717"/></svg></a>
           </div>
         </div>
-        <span class="footer__author">© 2020 Рукавишникова Диана</span>
+        <span class="footer__author">©2020 Рукавишникова Диана</span>
 
       </section>
     </footer>
   </div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>

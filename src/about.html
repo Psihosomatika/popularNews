@@ -5,10 +5,8 @@
   <meta name = "description" content="Сервис для анализа происходящих в мире событий">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="./page/index-news.css">
-  <link rel="stylesheet" href="./node_modules/flickity/dist/flickity.css">
-  <link rel="icon" href="./images/Favicon.png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
+  <link rel="icon" href="<%=require('./images/Favicon.png').default%>">
   <title>О проекеу</title>
 </head>
 <body>
@@ -21,7 +19,7 @@
           <nav class="nav>">
             <ul class="navigation">
               <li class="navigation__li">
-                <a href="index-news.html" class="navigation__link navigation__link_underline link">Главная</a> <!--Ссылки-->
+                <a href="index.html" class="navigation__link navigation__link_underline link">Главная</a> <!--Ссылки-->
               </li>
               <li class="navigation__li">
                 <a href="about.html" class="navigation__link  navigation__link_black link">О проекте</a>
@@ -50,19 +48,19 @@
         <div class="technologies__flex">
           <figure class="technologies__icon">
             <figcaption class="technologies__icon-text">CSS</figcaption>
-            <div class="technologies__icon-img"><img src="./images/html.png" alt="логотип HTML"></div>
+            <div class="technologies__icon-img"><img src="<%=require('./images/html.png').default%>" alt="логотип HTML"></div>
           </figure>
           <figure class="technologies__icon">
             <figcaption class="technologies__icon-text">HTML</figcaption>
-            <div class="technologies__icon-img"><img src="./images/css.png" alt="логотип CSS"></div>
+            <div class="technologies__icon-img"><img src="<%=require('./images/css.png').default%>" alt="логотип CSS"></div>
           </figure>
           <figure class="technologies__icon">
             <figcaption class="technologies__icon-text">Java Script</figcaption>
-            <div class="technologies__icon-img"><img src="./images/js.png" class="js" alt="логотип Java Script"></div>
+            <div class="technologies__icon-img"><img src="<%=require('./images/js.png').default%>" class="js" alt="логотип Java Script"></div>
           </figure>
           <figure class="technologies__icon">
             <figcaption class="technologies__icon-text">Webpack</figcaption>
-            <div class="technologies__icon-img"><img src="./images/webpack.png" alt="логотип Webpack"></div>
+            <div class="technologies__icon-img"><img src="<%=require('./images/webpack.png').default%>"  alt="логотип Webpack"></div>
           </figure>
         </div>
       </section>
@@ -71,7 +69,7 @@
       <div class="cover__about-author">
         <section class="about-author">
           <div class="about-author__photo-me">
-            <img  class="photo" alt="фотография автора сайта" src="./images/image-03.png">
+            <img  class="photo" alt="фотография автора сайта" src="<%=require('./images/image-03.png').default%>" >
           </div>
           <div>
             <h2 class="about-author__title">Об авторе</h2>
@@ -88,7 +86,7 @@
               <div class="position">
                 <span class="carusel__data">14 апреля 2019</span>
                 <div class="carusel__block">
-                  <div class="carusel__photo"><img src="./images/image-01.png"  alt="фотография того, кто оставил коммит"></div>
+                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
                   <div class="carusel__flex2">
                     <p class="carusel__name">Антон Дмитирев</p>
                     <p class="carusel__email" >sjfd@gmail.com</p>
@@ -102,7 +100,7 @@
               <div class="position">
                 <span class="carusel__data">14 апреля 2019</span>
                 <div class="carusel__block">
-                  <div class="carusel__photo"><img src="./images/image-01.png"  alt="фотография того, кто оставил коммит"></div>
+                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"   alt="фотография того, кто оставил коммит"></div>
                   <div class="carusel__flex2">
                     <p class="carusel__name">Антон Дмитирев</p>
                     <p class="carusel__email" >sjfd@gmail.com</p>
@@ -116,7 +114,7 @@
               <div class="position">
                 <span class="carusel__data">14 апреля 2019</span>
                 <div class="carusel__block">
-                  <div class="carusel__photo"><img src="./images/image-01.png"  alt="фотография того, кто оставил коммит"></div>
+                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"   alt="фотография того, кто оставил коммит"></div>
                   <div class="carusel__flex2">
                     <p class="carusel__name">Антон Дмитирев</p>
                     <p class="carusel__email" >sjfd@gmail.com</p>
@@ -130,7 +128,7 @@
               <div class="position">
                 <span class="carusel__data">14 апреля 2019</span>
                 <div class="carusel__block">
-                  <div class="carusel__photo"><img src="./images/image-01.png"  alt="фотография того, кто оставил коммит"></div>
+                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
                   <div class="carusel__flex2">
                     <p class="carusel__name">Антон Дмитирев</p>
                     <p class="carusel__email" >sjfd@gmail.com</p>
@@ -144,7 +142,7 @@
               <div class="position">
                 <span class="carusel__data">14 апреля 2019</span>
                 <div class="carusel__block">
-                  <div class="carusel__photo"><img src="./images/image-01.png"  alt="фотография того, кто оставил коммит"></div>
+                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
                   <div class="carusel__flex2">
                     <p class="carusel__name">Антон Дмитирев</p>
                     <p class="carusel__email" >sjfd@gmail.com</p>
@@ -170,8 +168,8 @@
         <section class="footer">
           <div class="footer__block">
             <div class="footer__block-link">
-              <a href="./index-news.html" class="footer__link link">Главная</a>
-              <a href="about.html" class="footer__link link">О проекте</a>
+              <a href="./index.html" class="footer__link link">Главная</a>
+              <a href="./about.html" class="footer__link link">О проекте</a>
               <a href="https://praktikum.yandex.ru" class="footer__link link">Яндекс.Практикум</a>
             </div>
             <div class="footer__block-icon">
@@ -184,6 +182,6 @@
         </section>
       </footer>
   </div>
-  <script src="./flickity.pkgd.js"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>
 </html>

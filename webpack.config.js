@@ -1,22 +1,23 @@
-const path = require('path');//+
-const HtmlWebpackPlugin = require('html-webpack-plugin');//+
-const WebpackMd5Hash = require('webpack-md5-hash');//+
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');//+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const cssnano = require('cssnano');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//+
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const isDev = process.env.NODE_ENV === 'development';//+
+const isDev = process.env.NODE_ENV === 'development';
 
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    articles: './src/saved-articles/articles.js',
+    main: './src/index.js',
+    about: './src/about.js',
+    analitica: './src/analitica.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './js/[name].[chunkhash].js',
+    filename: '[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -30,14 +31,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          isDev
-            ? 'style-loader'
-            : {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                publicPath: '../',
-              },
-            },
+          (isDev ? 'style-loader' :  MiniCssExtractPlugin.loader),
           'css-loader',
           'postcss-loader',
         ],
@@ -78,25 +72,25 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './css/[name].[contenthash].css',
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,//возможно удалить? 
-      hash: true,
-      template: './src/index.html',
-      filename: 'index.html',
-      chunks: [
-        'index',
-      ],
+      filename: 'style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
-      template: './src/saved-articles/articles.html',
-      filename: 'articles.html',
-      chunks: [
-        'articles',
-      ],
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './src/about.html',
+      filename: 'about.html',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './src/analitica.html',
+      filename: 'analitica.html',
     }),
 
     new WebpackMd5Hash(),

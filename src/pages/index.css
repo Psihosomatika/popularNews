@@ -1,33 +1,7 @@
-@font-face {
-  src: url('../fonts-frontend/roboto-regular.woff') format('woff');
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-}
-@font-face {
-  src: url('../fonts-frontend/roboto-medium.woff') format('woff');
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: bold;
-}
-@font-face {
-  src: url('../fonts-frontend/robotoslab-regular.woff') format('woff');
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  src: url('../fonts-frontend/Robotoslabsemibold.woff') format('woff');
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: bold;
-}
-@font-face {
-  src: url('../fonts-frontend/sourcesanspro-regular.woff') format('woff');
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: normal;
-}
+@import url(../vendor/normalize.css);
+@import url(../vendor/font.css);
+@import url(../blocks/header/header.css);
+
 
 .page {
   -webkit-font-smoothing: antialiased;
@@ -41,128 +15,7 @@
   font-weight: 500;
   min-width: 300px;
 }
-/*ГОЛОВА*/
-.cover__header {
-  background: #292727;
-  width: 100%;
-  min-width: 300px;
-}
-.nav__flex {
-  border-bottom: 1px solid rgba(196, 196, 196, 0.01);
-  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 544px;
-  min-width: 300px;
-  margin-top: 0 auto 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: 10px;
-}
-.navigation {
-  margin-right: 14px;
-  width: 150px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-weight: normal;
-  padding: 0;
-  font-size: 16px;
-  line-height: 24px;
-}
-.navigation__link :nth-child(1) {
-  margin: 16px 11px 16px 0px;
-  list-style-type: none;
-}
-.navigation__link :nth-child(2) {
-  margin: 16px 0px 16px 11px;
-  list-style-type: none;
-}
 
-.navigation__li {
-  list-style-type: none;
-}
-.header__logo {
-  font-family:  'Roboto Slab';
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  margin: 17px 0px 15px 16px;
-
-}
-.cover__search {
-  max-width: 544px;
-  min-width: 300px;
-  max-height: 536px;
-  min-height: 400px;
-  background-image: url('../images/georgia-de-lotz--UsJoNxLaNo-unsplasht-mini.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: auto;
-  color: white;
-}
-.navigation__link {
-  color: white;
-  border-bottom: 3px solid white;
-  padding-bottom: 14px;
-  position: relative;
-  top: 3px;
-  text-decoration: none;
-}
-/*----тема с главным вопросом-------*/
-.search {
-  max-width: 512px;
-}
-.search__title {
-  margin: 0 16px;
-  font-family: 'Roboto Slab';
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 40px;
-  padding-top: 30px;
-}
-.search__text {
-  font-size: 20px;
-  line-height: 26px;
-  margin: 16px 16px 0;
-}
-.info {
-  margin-top: 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 544px;
-  min-width: 288px;
-  padding-bottom: 32px;
-}
-.info__input {
-  margin: 0 16px;
-  font-size: 16px;
-  line-height: 22px;
-  color: #b6bcbf;
-  max-width: 544px;
-  min-width: 250px;
-  height: 56px;
-  border: 1px solid #d1d2d6;
-  box-sizing: border-box;
-  border-radius: 100px;
-}
-.info__btn {
-  margin: 16px 16px 0;
-  background-color: #2f71e5;
-  border: 1px solid #2f71e5;
-  max-width: 544px;
-  min-width: 250px;
-  height: 56px;
-  box-sizing: border-box;
-  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
-  border-radius: 100px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #fff;
-}
 
 /*Карточки с ответом на вопрос!!!!*/
 .cover__results {
@@ -933,92 +786,6 @@ body { font-family: sans-serif; }
 }
 /*-------------------------------------------------------------------545-729---------------------------------------------------------*/
 @media screen and (min-width: 545px) and (max-width: 729px) {
-  /*Голова*/
-
-  .nav__flex {
-    max-width: 1104px;
-    min-width: 545px;
-    margin-right: 10px;
-  }
-
-  .navigation {
-    margin-right: 34px;
-    width: 190px;
-    font-size: 18px;
-    line-height: 24px;
-  }
-  .navigation__link :nth-child(1) {
-    margin: 16px 11px 18px 0px;
-    list-style-type: none;
-  }
-  .navigation__link :nth-child(2) {
-    margin: 16px 0px 18px 11px;
-    list-style-type: none;
-  }
-
-  .header__logo {
-    font-size: 20px;
-    line-height: 24px;
-    margin: 22px 0px 18px 40px;
-  }
-  .cover__search {
-    max-width: 1104px;
-    min-width: 545px;
-    background-image: url('../images/georgia-de-lotz--UsJoNxLaNo-unsplash-norm.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: auto;
-    color: white;
-  }
-  .navigation__link {
-    padding-bottom: 18px;
-    position: relative;
-  }
-
-/*----тема с главным вопросом-------*/
-.search {
-  max-width: 1104px;
-
-}
-.search__title {
-  margin: 0 auto;
-  padding-top: 40px;
-  min-width: 400px;
-  max-width: 400px;
-}
-.search__text {
-  font-size: 18px;
-  line-height: 24px;
-  margin: 16px auto 0;
-  max-width: 400px;
-  min-width: 400px;
-}
-.info {
-  margin: 41px auto 0;
-  flex-direction: row;
-  justify-content: flex-start;
-  max-width: 400px;
-  min-width: 390px;
-  padding-bottom: 0;
-  position: relative;
-}
-.info__input {
-  margin: 0;
-  max-width: 300px;
-  min-width: 300px;
-  border: 1px solid #d1d2d6;
-  box-sizing: border-box;
-  border-radius: 100px;
-}
-.info__btn {
-  margin: 0;
-  max-width: 160px;
-  min-width: 160px;
-  color: #fff;
-  position: absolute;
-  right: 0px;
-}
 
 /*Карточки с ответом на вопрос!!!!*/
 .result {
@@ -1466,98 +1233,7 @@ body { font-family: sans-serif; }
 }
 /*-------------------------------------------------------------------730-1104---------------------------------------------------------*/
 @media screen and (min-width: 730px) and (max-width: 1104px) {
-  /*Голова*/
 
-  .nav__flex {
-    max-width: 1104px;
-    min-width: 545px;
-    margin-right: 10px;
-  }
-
-  .navigation {
-    margin-right: 34px;
-    width: 190px;
-    font-size: 18px;
-    line-height: 24px;
-  }
-  .navigation__link :nth-child(1) {
-    margin: 16px 11px 18px 0px;
-    list-style-type: none;
-  }
-  .navigation__link :nth-child(2) {
-    margin: 16px 0px 18px 11px;
-    list-style-type: none;
-  }
-
-  .header__logo {
-    font-size: 20px;
-    line-height: 24px;
-    margin: 22px 0px 18px 40px;
-  }
-  .cover__search {
-    max-width: 1104px;
-    min-width: 545px;
-    background-image: url('../images/georgia-de-lotz--UsJoNxLaNo-unsplash-norm.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: auto;
-    color: white;
-  }
-  .navigation__link {
-    padding-bottom: 18px;
-    position: relative;
-  }
-  .search {
-    max-width: 1104px;
-
-  }
-  .search__title {
-    margin: 0 auto;
-    padding-top: 40px;
-    min-width: 400px;
-    max-width: 400px;
-  }
-  .search__text {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 16px auto 0;
-    max-width: 400px;
-    min-width: 400px;
-  }
-  .info {
-    margin: 41px auto 0;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-width: 400px;
-    min-width: 390px;
-    padding-bottom: 0;
-    position: relative;
-  }
-  .info__input {
-    margin: 0;
-    max-width: 300px;
-    min-width: 300px;
-    border: 1px solid #d1d2d6;
-    box-sizing: border-box;
-    border-radius: 100px;
-  }
-  .info__btn {
-    margin: 0;
-    max-width: 160px;
-    min-width: 160px;
-    color: #fff;
-    position: absolute;
-    right: 0px;
-  }
-  .info__input:hover .info__btn {
-    background-color: #347eff;
-    border: 1px solid #347eff;
-  }
-  .info__btn:active {
-    background-color: #2a65cc;
-    border: 1px solid #2a65cc;
-  }
 
 /*Карточки с ответом на вопрос!!!!*/
 .result {
@@ -1690,7 +1366,7 @@ body { font-family: sans-serif; }
   line-height: 24px;
 }
 .info__btn :hover {
-  cursor: url('../images/Pointer.png');
+  cursor: url('<%=require("../images/Pointer.png").default%>)');
 }
 
 /*Блок НИЧЕГО НЕ НАЙДЕНО*/
@@ -2009,10 +1685,10 @@ body { font-family: sans-serif; }
     color: #1a1b22;
   }
   .link :hover {
-    cursor: url('../images/Pointer.png');
+    cursor: url('<%=require("../images/Pointer.png").default%>)');
   }
   .result__btn :hover{
-    cursor: url('../images/Pointer.png');
+    cursor: url('<%=require("../images/Pointer.png").default%>)');
   }
 
 
@@ -2093,114 +1769,9 @@ body { font-family: sans-serif; }
 }
 /*-------------------------------------------------------------------1105 - бесконечность---------------------------------------------------------*/
 @media screen and (min-width: 1105px) {
-  /*Голова*/
 
-  .nav__flex {
-    max-width: 1440px;
-    min-width: 1105px;
-    margin-right: 20px;
-  }
-
-  .navigation {
-    margin-right: 34px;
-    width: 190px;
-    font-size: 18px;
-    line-height: 24px;
-  }
-  .navigation__link :nth-child(1) {
-    margin: 16px 11px 18px 0px;
-    list-style-type: none;
-  }
-  .navigation__link :nth-child(2) {
-    margin: 16px 0px 18px 11px;
-    list-style-type: none;
-  }
-
-  .header__logo {
-    font-size: 20px;
-    line-height: 24px;
-    margin: 30px 0px 18px 104px;
-  }
-  .header__block{
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-  .cover__search {
-    max-width: 1440px;
-    background-image: url('../images/georgia-de-lotz--UsJoNxLaNo-unsplashc-big.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: auto;
-    color: white;
-  }
-  .navigation__link {
-    padding-bottom: 18px;
-    position: relative;
-  }
   /*блок с главным вопросом. */
-  .search {
-    max-width: 1440px;
 
-  }
-  .search__title {
-    margin: 0 auto;
-    font-size: 60px;
-    line-height: 64px;
-    padding-top: 80px;
-    min-width: 608px;
-    max-width: 608px;
-  }
-  .search__text {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 32px auto 0;
-    min-width: 608px;
-    max-width: 608px;
-  }
-  .info {
-    margin: 64px auto 0;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-width: 608px;
-    min-width: 607px;
-    padding-bottom: 80px;
-    position: relative;
-  }
-  .info__input {
-    margin: 0;
-    max-width: 504px;
-    min-width: 503px;
-    border: 1px solid #d1d2d6;
-    box-sizing: border-box;
-    border-radius: 100px;
-  }
-  .info__btn {
-    margin: 0;
-    max-width: 168px;
-    min-width: 168px;
-    color: #fff;
-    position: absolute;
-    right: 0px;
-  }
-  .info__input:hover .info__btn {
-    background-color: #347eff;
-    border: 1px solid #347eff;
-  }
-  .info__btn:active {
-    background-color: #2a65cc;
-    border: 1px solid #2a65cc;
-  }
-  .info__btn :hover {
-    cursor: url('../images/Pointer.png');
-
-  }
-  .info__input:hover {
-    cursor: url('../images/Pointer.png');
-  }
-  .result__btn {
-    cursor: url('../images/Pointer.png');
-  }
 /*Карточки с ответом на вопрос!!!!*/
 .result {
   max-width: 1440px;
