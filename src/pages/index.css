@@ -1850,6 +1850,9 @@ body { font-family: sans-serif; }
     min-width: 1105px;
     max-width: 1440px;
   }
+  .info__btn :hover {
+    cursor: url('<%=require("../images/Pointer.png").default%>)');
+  }
   /*блок с главным вопросом. */
 
   /*Карточки с ответом на вопрос!!!!*/
