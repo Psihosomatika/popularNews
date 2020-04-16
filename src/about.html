@@ -48,19 +48,19 @@
         <div class="technologies__flex">
           <figure class="technologies__icon">
             <figcaption class="technologies__icon-text">CSS</figcaption>
-            <div class="technologies__icon-img"><img src="<%=require('./images/html.png').default%>" alt="логотип HTML"></div>
+            <div class="technologies__icon-img"><img src="<%=require('./images/html.png').default%>" class="icon" alt="логотип CSS"></div>
           </figure>
           <figure class="technologies__icon">
             <figcaption class="technologies__icon-text">HTML</figcaption>
-            <div class="technologies__icon-img"><img src="<%=require('./images/css.png').default%>" alt="логотип CSS"></div>
+            <div class="technologies__icon-img"><img src="<%=require('./images/css.png').default%>" class="icon" alt="логотип HTML"></div>
           </figure>
-          <figure class="technologies__icon">
+          <figure class="technologies__icon technologies__icon_js">
             <figcaption class="technologies__icon-text">Java Script</figcaption>
             <div class="technologies__icon-img"><img src="<%=require('./images/js.png').default%>" class="js" alt="логотип Java Script"></div>
           </figure>
           <figure class="technologies__icon">
             <figcaption class="technologies__icon-text">Webpack</figcaption>
-            <div class="technologies__icon-img"><img src="<%=require('./images/webpack.png').default%>"  alt="логотип Webpack"></div>
+            <div class="technologies__icon-img"><img src="<%=require('./images/webpack.png').default%>"  class="wp" alt="логотип Webpack"></div>
           </figure>
         </div>
       </section>
@@ -79,9 +79,12 @@
         </section>
       </div>
         <section class="history">
-          <h2 class="history__title">История коммитов из GitHub</h2>
-          <!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР -->
-          <div class="carousel" data-flickity='{ "wrapAround": true}'>
+          <div class="history__flex">
+            <h2 class="history__title">История коммитов из GitHub</h2>
+            <a class="history__link" href="https://github.com/Psihosomatika/popularNews/commits/master">Открыть в GitHub &gt;</a>
+          </div>
+            <!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР -->
+          <div class="carousel">
             <div class="carousel-cell">
               <div class="position">
                 <span class="carusel__data">14 апреля 2019</span>
@@ -159,7 +162,7 @@
               <li class="dot" aria-label="Page dot 5"></li>
             </ol>
           </div>
-          <div class="history__btn" ><a class="history__link link" href="https://github.com/Psihosomatika/popularNews/commits/master">Открыть в GitHub</a></div>
+          <a href="https://github.com/Psihosomatika/popularNews/commits/master" class="history__link_btn link" >Открыть в GitHub</a>
         </section>
       </div>
     </main>
