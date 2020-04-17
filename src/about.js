@@ -1,4 +1,5 @@
 import './pages/index.css';
+
 import Flickity from 'flickity';
 
 const slider = new Flickity('.carousel', {

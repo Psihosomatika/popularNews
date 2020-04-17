@@ -17,8 +17,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './scripts/[name].[chunkhash].js',
+    filename: '[name].[chunkhash].js',
   },
+
+
   module: {
     rules: [
       {
@@ -31,9 +33,14 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          (isDev ? 'style-loader' :  MiniCssExtractPlugin.loader),
-          'css-loader',
-          'postcss-loader',
+          (isDev ? 'style-loader': {
+             loader:  MiniCssExtractPlugin.loader,
+          options: {
+              publicPath: '../'
+          }
+        }),
+            'css-loader',
+            'postcss-loader'
         ],
       },
       {
@@ -66,7 +73,7 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]',
+        loader: 'file-loader?name=./fonts/[name].[ext]',
       },
     ],
   },

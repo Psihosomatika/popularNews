@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
   <link rel="icon" href="<%=require('./images/Favicon.png').default%>">
-  <title>О проекеу</title>
+  <title>О проекте</title>
 </head>
 <body>
   <div class="page">
@@ -32,7 +32,7 @@
     <!--Остновной раздел сайта================================================================-->
     <main>
       <div class="cover__main">
-      <!--Клиентам-->
+      <!--Клиентам      -->
       <section class="client">
         <div class="client__block">
           <h2 class="client__title">Клиентам</h2>
@@ -43,6 +43,7 @@
           <p class="client__text">Проект был проверен экспертами Яндекс.Практикума. И если вашему бизесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
         </div>
       </section>
+      <!--    -->
       <section class="technologies">
         <h2 class="technologies__title">Используемые технологии</h2>
         <div class="technologies__flex">
@@ -65,7 +66,7 @@
         </div>
       </section>
 
-      <!--об авторе--------------------------------------------------------->
+      <!--об авторе---------------------------------------------------------        -->
       <div class="cover__about-author">
         <section class="about-author">
           <div class="about-author__photo-me">
@@ -78,12 +79,13 @@
           </div>
         </section>
       </div>
-        <section class="history">
+
+      <section class="history">
           <div class="history__flex">
             <h2 class="history__title">История коммитов из GitHub</h2>
             <a class="history__link" href="https://github.com/Psihosomatika/popularNews/commits/master">Открыть в GitHub &gt;</a>
           </div>
-            <!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР -->
+          <!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР  -->
           <div class="carousel">
             <div class="carousel-cell">
               <div class="position">
@@ -166,7 +168,8 @@
         </section>
       </div>
     </main>
-      <!--ПОДВАЛ===================================================================================-->
+
+      <!--ПОДВАЛ===================================================================================      -->
       <footer class="cover__footer">
         <section class="footer">
           <div class="footer__block">
@@ -184,6 +187,7 @@
 
         </section>
       </footer>
+
   </div>
   <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>

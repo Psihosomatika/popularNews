@@ -1,16 +1,4 @@
 @import url(../vendor/normalize.css);
-@import url(../vendor/font.css);
+@import url(../fonts/font.css);
 @import url(../blocks/header/header.css);
 @import url(../pages/index.css);
-.page {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -ms-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern";
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  min-width: 300px;
-}

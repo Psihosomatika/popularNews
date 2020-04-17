@@ -1,7 +1,5 @@
 @import url(../vendor/normalize.css);
-@import url(../vendor/font.css);
-@import url(../blocks/header/header.css);
-
+@import url(../fonts/font.css);
 
 .page {
   -webkit-font-smoothing: antialiased;
@@ -10,15 +8,127 @@
   -webkit-text-size-adjust: 100%;
   -ms-font-feature-settings: "kern" 1;
   font-feature-settings: "kern";
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   min-width: 300px;
   max-width: 1440px;
   margin: 0 auto 0;
 }
+/*ГОЛОВА*/
 
+.nav__flex {
+  border-bottom: 1px solid rgba(196, 196, 196, 0.01);
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 544px;
+  min-width: 300px;
+  margin-top: 0 auto 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+.navigation {
+  margin-right: 14px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: normal;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+.navigation__link :nth-child(1) {
+  margin: 16px 11px 16px 0px;
+  list-style-type: none;
+}
+.navigation__link :nth-child(2) {
+  margin: 16px 0px 16px 11px;
+  list-style-type: none;
+}
 
+.navigation__li {
+  list-style-type: none;
+}
+.header__logo {
+  font-family:  'Roboto Slab', serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 17px 0px 15px 16px;
+
+}
+.cover__search {
+  width: 100%;
+  background-image: url('../images/mini.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  color: white;
+}
+.navigation__link {
+  color: white;
+  border-bottom: 3px solid white;
+  padding-bottom: 14px;
+  position: relative;
+  top: 3px;
+  text-decoration: none;
+}
+/*----тема с главным вопросом-------*/
+.search {
+  max-width: 512px;
+}
+.search__title {
+  margin: 0 16px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 40px;
+  padding-top: 30px;
+}
+.search__text {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 16px 16px 0;
+}
+.info {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 544px;
+  min-width: 288px;
+  padding-bottom: 32px;
+}
+.info__input {
+  margin: 0 16px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #b6bcbf;
+  max-width: 544px;
+  min-width: 250px;
+  height: 56px;
+  border: 1px solid #d1d2d6;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+.info__btn {
+  margin: 16px 16px 0;
+  background-color: #2f71e5;
+  border: 1px solid #2f71e5;
+  max-width: 544px;
+  min-width: 250px;
+  height: 56px;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  border-radius: 100px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
 /*Карточки с ответом на вопрос!!!!*/
 .result {
   max-width: 544px;
@@ -28,7 +138,7 @@
 .result__title {
   font-size: 30px;
   line-height: 34px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: normal;
   max-width: 512px;
@@ -72,7 +182,7 @@
 }
 .card__title {
   margin: 16px 16px 0;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-weight: normal;
   font-size: 22px;
   line-height: 26px;
@@ -89,7 +199,7 @@
  white-space: pre-line;
 }
 .card__label {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-weight: bold;
   font-style: normal;
   text-transform: uppercase;
@@ -171,7 +281,7 @@
 
 }
 .nothing-found__mini-text {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-weight: normal;
   font-style: normal;
   text-align: center;
@@ -200,8 +310,6 @@
   max-width: 544px;
   min-width: 250px;
   padding-bottom: 32px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .about-author__photo-me {
   max-width: 272px;
@@ -215,7 +323,7 @@
   min-width: 250px;
 }
 .about-author__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-weight: normal;
   font-style: normal;
   color: #1a1b22;
@@ -306,7 +414,7 @@
   margin-right: auto;
 }
 .client__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -328,13 +436,13 @@
   color: #f5f6f7;
 }
 .technologies__flex {
-  width: 320px;
+  width: 290px;
   display: grid;
   grid-template-columns: 49% 49%;
   grid-template-rows: 50% 50%;
 }
 .technologies__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -342,7 +450,7 @@
   color: #1a1b22;
   margin: 32px 0 auto 16px;
   max-width: 544px;
-  min-width: 300px;
+  min-width: 250px;
 }
 .technologies__icon {
   width: 100px;
@@ -387,14 +495,14 @@
 }
 .history__title {
   color: #1a1b22;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
   line-height: 40px;
   margin: 32px 16px 0;
   max-width: 544px;
-  min-width: 288px;
+  min-width: 250px;
   padding-bottom: 16px;
 }
 .position {
@@ -670,13 +778,13 @@ body { font-family: sans-serif; }
 
 /*АНАЛИТИКА!!!!!!!!!!!!!!----*/
 .cover__analitica {
-  min-width: 320px;
-  background-color: #f5f6f7;
+  min-width: 300px;
+  background-color: #fff;
 }
 .analitica {
-  max-width: 544px;
-  min-width: 316px;
-  margin: 16px auto 0;
+  max-width: 454px;
+  min-width: 300px;
+  margin: 0;
 }
 .analitica__reply {
   color: #1a1b22;
@@ -686,7 +794,7 @@ body { font-family: sans-serif; }
   margin: 4px 16px 0;
 }
 .analitica__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -705,21 +813,21 @@ body { font-family: sans-serif; }
 }
 .chart {
   max-width: 544px;
-  min-width: 320px;
+  min-width: 290px;
   color: #1a1b22;
+  background-color: #f5f6f7;
 }
 .chart__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: normal;
-  width: 288px;
+  width: 240px;
   font-size: 22px;
   line-height: 30px;
-  margin: 24px 16px 0;
+  margin: 0 16px 0;
+  padding-top: 24px;
 }
 .chart__block-title {
-  max-width: 544px;
-  min-width: 300px;
   margin: 16px 16px 0;
   display: grid;
   grid-template-columns: 2fr 5fr;
@@ -744,6 +852,7 @@ body { font-family: sans-serif; }
   display: grid;
   grid-template-columns: 2fr 5fr;
   margin: 16px 16px 0;
+  padding-bottom: 38px;
 }
 .weekday-ruler {
   display: none;
@@ -797,7 +906,90 @@ body { font-family: sans-serif; }
     min-width: 545px;
     max-width: 729px
   }
+/*Голова*/
 
+  .nav__flex {
+    max-width: 729px;
+    min-width: 545px;
+    margin: 0;
+  }
+
+  .navigation {
+    margin-right: 34px;
+    width: 190px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .navigation__link :nth-child(1) {
+    margin: 16px 11px 18px 0px;
+    list-style-type: none;
+  }
+  .navigation__link :nth-child(2) {
+    margin: 16px 0px 18px 11px;
+    list-style-type: none;
+  }
+
+  .header__logo {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 22px 0px 18px 40px;
+  }
+  .cover__search {
+    width: 100%;
+    background-image: url('../images/norm.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    color: white;
+  }
+  .navigation__link {
+    padding-bottom: 18px;
+    position: relative;
+  }
+
+  .search {
+    max-width: 1104px;
+
+  }
+  .search__title {
+    margin: 0 auto;
+    padding-top: 40px;
+    min-width: 400px;
+    max-width: 400px;
+  }
+  .search__text {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px auto 0;
+    max-width: 400px;
+    min-width: 400px;
+  }
+  .info {
+    margin: 41px auto 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 400px;
+    min-width: 390px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  .info__input {
+    margin: 0;
+    max-width: 300px;
+    min-width: 300px;
+    border: 1px solid #d1d2d6;
+    box-sizing: border-box;
+    border-radius: 100px;
+  }
+  .info__btn {
+    margin: 0;
+    max-width: 160px;
+    min-width: 160px;
+    color: #fff;
+    position: absolute;
+    right: 0px;
+  }
   /*Карточки с ответом на вопрос!!!!*/
   .result {
     max-width: 1105px;
@@ -847,7 +1039,7 @@ body { font-family: sans-serif; }
   }
   .card__title {
     margin: 16px 16px 0;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: normal;
     font-size: 22px;
     line-height: 26px;
@@ -864,7 +1056,7 @@ body { font-family: sans-serif; }
   white-space: pre-line;
   }
   .card__label {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: bold;
     font-style: normal;
     text-transform: uppercase;
@@ -935,7 +1127,7 @@ body { font-family: sans-serif; }
 
   }
   .nothing-found__mini-text {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: normal;
     font-style: normal;
     text-align: center;
@@ -982,7 +1174,7 @@ body { font-family: sans-serif; }
     background-color: #fff;
   }
   .analitica {
-    max-width: 1104px;
+    max-width: 729px;
     min-width: 545px;
   }
 
@@ -1006,18 +1198,17 @@ body { font-family: sans-serif; }
     background-color: #f5f6f7;
   }
   .chart__title {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     width: 288px;
     font-size: 22px;
     line-height: 30px;
-    margin: 24px 40px 0;
+    margin: 0 40px 0;
+    padding-top: 24px;
   }
   .chart__block-title {
-    max-width: 1104px;
-    min-width: 545px;
-    margin: 49px 40px 0;
+    margin: 40px 40px 0;
     display: grid;
     grid-template-columns: 1fr 5fr;
     border-bottom: 1px solid #1a1b22;
@@ -1042,6 +1233,7 @@ body { font-family: sans-serif; }
     display: grid;
     grid-template-columns: 1fr 5fr;
     margin: 8px 40px 0;
+    padding-bottom: 38px;
   }
   .weekday-ruler {
     display: block;
@@ -1124,7 +1316,7 @@ body { font-family: sans-serif; }
     margin-right: auto;
   }
   .client__title {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -1149,7 +1341,7 @@ body { font-family: sans-serif; }
   }
   .history__title {
     color: #1a1b22;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -1294,6 +1486,97 @@ body { font-family: sans-serif; }
     min-width: 730px;
     max-width: 1104px;
   }
+   /*Голова*/
+
+   .nav__flex {
+    max-width: 1104px;
+    min-width: 545px;
+    margin-right: 10px;
+  }
+
+  .navigation {
+    margin-right: 34px;
+    width: 190px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .navigation__link :nth-child(1) {
+    margin: 16px 11px 18px 0px;
+    list-style-type: none;
+  }
+  .navigation__link :nth-child(2) {
+    margin: 16px 0px 18px 11px;
+    list-style-type: none;
+  }
+
+  .header__logo {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 22px 0px 18px 40px;
+  }
+  .cover__search {
+    width: 100%;
+    background-image: url('../images/norm.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    color: white;
+  }
+  .navigation__link {
+    padding-bottom: 18px;
+    position: relative;
+  }
+  .search {
+    max-width: 1104px;
+
+  }
+  .search__title {
+    margin: 0 auto;
+    padding-top: 40px;
+    min-width: 400px;
+    max-width: 400px;
+  }
+  .search__text {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px auto 0;
+    max-width: 400px;
+    min-width: 400px;
+  }
+  .info {
+    margin: 41px auto 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 400px;
+    min-width: 390px;
+    padding-bottom: 30px;
+    position: relative;
+  }
+  .info__input {
+    margin: 0;
+    max-width: 300px;
+    min-width: 300px;
+    border: 1px solid #d1d2d6;
+    box-sizing: border-box;
+    border-radius: 100px;
+  }
+  .info__btn {
+    margin: 0;
+    max-width: 160px;
+    min-width: 160px;
+    color: #fff;
+    position: absolute;
+    right: 0px;
+  }
+  .info__input:hover .info__btn {
+    background-color: #347eff;
+    border: 1px solid #347eff;
+  }
+  .info__btn:active {
+    background-color: #2a65cc;
+    border: 1px solid #2a65cc;
+  }
   /*Карточки с ответом на вопрос!!!!*/
   .result {
     max-width: 1000px;
@@ -1350,7 +1633,7 @@ body { font-family: sans-serif; }
   }
   .card__title {
     margin: 16px 16px 0;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: normal;
     font-size: 22px;
     line-height: 26px;
@@ -1367,7 +1650,7 @@ body { font-family: sans-serif; }
   white-space: pre-line;
   }
   .card__label {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: bold;
     font-style: normal;
     text-transform: uppercase;
@@ -1441,7 +1724,7 @@ body { font-family: sans-serif; }
 
   }
   .nothing-found__mini-text {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: normal;
     font-style: normal;
     text-align: center;
@@ -1492,7 +1775,7 @@ body { font-family: sans-serif; }
     margin-right: auto;
   }
   .client__title {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -1516,7 +1799,7 @@ body { font-family: sans-serif; }
   }
   .history__title {
     color: #1a1b22;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -1633,17 +1916,17 @@ body { font-family: sans-serif; }
     background-color: #f5f6f7;
   }
   .chart__title {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     width: 288px;
     font-size: 22px;
     line-height: 30px;
-    margin: 24px 40px 0;
+    margin: 0 40px 0;
+    padding-top: 40px;
   }
   .chart__block-title {
-    max-width: 1104px;
-    min-width: 545px;
+
     margin: 49px 40px 0;
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -1669,6 +1952,7 @@ body { font-family: sans-serif; }
     display: grid;
     grid-template-columns: 1fr 5fr;
     margin: 8px 40px 0;
+    padding-bottom: 40px;
   }
   .weekday-ruler {
     display: block;
@@ -1850,6 +2134,118 @@ body { font-family: sans-serif; }
     min-width: 1105px;
     max-width: 1440px;
   }
+  /*Голова*/
+
+  .nav__flex {
+    max-width: 1440px;
+    min-width: 1105px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .navigation {
+    margin-right: 34px;
+    margin-bottom: 0;
+    margin-top: 26px;
+    width: 190px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .navigation__link :nth-child(1) {
+    margin: 16px 11px 18px 0px;
+    list-style-type: none;
+  }
+  .navigation__link :nth-child(2) {
+    margin: 16px 0px 18px 11px;
+    list-style-type: none;
+  }
+
+  .header__logo {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 30px 0px 18px 104px;
+  }
+  .header__block{
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .cover__search {
+    width: 100%;
+    background-image: url('../images/big.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    color: white;
+  }
+  .navigation__link {
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .search {
+    max-width: 1440px;
+
+  }
+  .search__title {
+    margin: 0 auto;
+    font-size: 60px;
+    line-height: 64px;
+    padding-top: 80px;
+    min-width: 608px;
+    max-width: 608px;
+  }
+  .search__text {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 32px auto 0;
+    min-width: 608px;
+    max-width: 608px;
+  }
+  .info {
+    margin: 64px auto 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 608px;
+    min-width: 607px;
+    padding-bottom: 80px;
+    position: relative;
+  }
+  .info__input {
+    margin: 0;
+    max-width: 504px;
+    min-width: 503px;
+    border: 1px solid #d1d2d6;
+    box-sizing: border-box;
+    border-radius: 100px;
+  }
+  .info__btn {
+    margin: 0;
+    max-width: 168px;
+    min-width: 168px;
+    color: #fff;
+    position: absolute;
+    right: 0px;
+  }
+  .info__input:hover .info__btn {
+    background-color: #347eff;
+    border: 1px solid #347eff;
+  }
+  .info__btn:active {
+    background-color: #2a65cc;
+    border: 1px solid #2a65cc;
+  }
+  .info__btn :hover {
+    cursor: url(../images/Pointer.png);
+
+  }
+  .info__input:hover {
+    cursor: url(../images/Pointer.png);
+  }
+  .result__btn {
+    cursor: url(../images/Pointer.png);
+  }
+
   .info__btn :hover {
     cursor: url('<%=require("../images/Pointer.png").default%>)');
   }
@@ -1903,7 +2299,7 @@ body { font-family: sans-serif; }
   }
   .card__title {
     margin: 16px 16px 0;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: normal;
     font-size: 26px;
     line-height: 30px;
@@ -1971,7 +2367,7 @@ body { font-family: sans-serif; }
 
   }
   .nothing-found__mini-text {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: normal;
     font-style: normal;
     text-align: center;
@@ -1999,7 +2395,6 @@ body { font-family: sans-serif; }
     margin-right: auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    margin-right: 5%;
   }
   .about-author__photo-me {
     max-width: 80%;
@@ -2035,7 +2430,7 @@ body { font-family: sans-serif; }
     margin-left: 104px;
   }
   .client__title {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -2117,7 +2512,7 @@ body { font-family: sans-serif; }
   }
   .history__title {
     color: #1a1b22;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
@@ -2250,18 +2645,18 @@ body { font-family: sans-serif; }
     background-color: #f5f6f7;
   }
   .chart__title {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: normal;
     width: 288px;
     font-size: 22px;
     line-height: 30px;
-    margin: 24px 40px 0;
+    margin: 0 40px 0;
+    padding-top: 80px;
   }
   .chart__block-title {
-    max-width: 1440px;
-    min-width: 1105px;
-    margin: 49px 40px 0;
+
+    margin: 48px 40px 0;
     display: grid;
     grid-template-columns: 1fr 5fr;
     border-bottom: 1px solid #1a1b22;
@@ -2286,6 +2681,7 @@ body { font-family: sans-serif; }
     display: grid;
     grid-template-columns: 1fr 5fr;
     margin: 8px 40px 0;
+    padding-bottom: 80px;
   }
   .weekday-ruler {
     display: block;
@@ -2356,6 +2752,7 @@ body { font-family: sans-serif; }
     color: #b6bcbf;
     margin: 32px 40px 0;
     display: block;
+    max-width: 500px;
   }
   .section_black {
     color: #1a1b22;
