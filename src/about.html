@@ -5,7 +5,8 @@
   <meta name = "description" content="Сервис для анализа происходящих в мире событий">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
+  <link rel="stylesheet" href="./pages/index.css">
+  <!--<link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">-->
   <link rel="icon" href="<%=require('./images/Favicon.png').default%>">
   <title>О проекте</title>
 </head>
@@ -87,11 +88,12 @@
           </div>
           <!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР  -->
           <div class="carousel">
+
             <div class="carousel-cell">
               <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
+                <time class="carusel__data">14 апреля 2019</time>
                 <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
+                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  class="carusel__img"  alt="фотография того, кто оставил коммит"></div>
                   <div class="carusel__flex2">
                     <p class="carusel__name">Антон Дмитирев</p>
                     <p class="carusel__email" >sjfd@gmail.com</p>
@@ -101,61 +103,6 @@
               </div>
             </div>
 
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"   alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
-
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"   alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
-
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
-
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
             <ol class="flickity-page-dots">
               <li class="dot" aria-label="Page dot 1"></li>
               <li class="dot" aria-label="Page dot 2"></li>
@@ -189,6 +136,7 @@
       </footer>
 
   </div>
-  <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
+  <script src="./js/about.js"></script>
+  <!--<script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>-->
 </body>
 </html>
