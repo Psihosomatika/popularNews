@@ -13,7 +13,7 @@ const item = document.querySelector('item');//количество упомин�
 
 resultKeyWord.textContent = '«' + localStorage.getItem('findingWord') + '»';
 numberOfNewsItems.textContent = data.totalResults;
-mentions.textContent = (keyWord, data.articles);
+mentions.textContent = theCountingOfReferences(keyWord, data.articles);
 month.textContent = '(' + showMonth() + ')';
 
 function showMonth() {

@@ -33,17 +33,17 @@
           <h1 class="search__title">Что в мире творится?</h1>
           <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
           <form class="info" name="info">
-            <input type="text" minlength="1" maxlength="500" placeholder="Политика" class="info__input" required>
+            <input type="text"  placeholder="Политика" class="info__input" >
             <button class="info__btn">Искать</button>
           </form>
         </section>
       </div>
 
     </header>
-    <!--Остновной раздел сайта================================================================-->
+    <!--Остновной раздел minlength="1" maxlength="500" required сайта================================================================-->
     <main>
       <div class="cover__results">
-        <div class="result result_on">
+        <div class="result">
           <div class="result__block">
             <h2 class="result__title">Результаты поиска</h2>
             <a href="./analitica.html" class="link__analytics link">Посмотреть аналитику &gt;</a><!--Ссылка на страницу с аналитикой-->
@@ -66,26 +66,25 @@
           </ul>
 
 
-          <div class="result__btn result__btn_on">Показать еще</div>
+          <div class="result__btn">Показать еще</div>
           <!--Preloader-->
           <div class="cards__searsc">
             <i class="circle-preloader"></i>
             <p class="circle-preloader__text">идет поиск</p>
           </div>
-          <!--НИЧЕГО НЕ НАЙДЕН-->
-          <div class="cards__nothing-found">
-            <div class="nothing-found__img">
-              <!--<img  src="<%=require('./images/not-found_v1.png').default%>" alt="Грустный смайлик">-->
-              <img  src="./images/not-found_v1.png" alt="Грустный смайлик">
-            </div>
-            <p class="nothing-found__mini-text">Ничего не найдено</p>
-            <p class="nothing-found__text">К сожалению по вашему запросу ничего не найдено.</p>
-          </div>
-          <p class="server__error">Что-то пошло не так =( Похоже, ошибка на севере</p>
         </div>
+        <!--НИЧЕГО НЕ НАЙДЕН-->
+        <div class="cards__nothing-found">
+          <div class="nothing-found__img">
+            <!--<img  src="<%=require('./images/not-found_v1.png').default%>" alt="Грустный смайлик">-->
+            <img  src="./images/not-found_v1.png" alt="Грустный смайлик">
+          </div>
+          <p class="nothing-found__mini-text">Ничего не найдено</p>
+          <p class="nothing-found__text">К сожалению по вашему запросу ничего не найдено.</p>
+        </div>
+        <p class="server__error">Что-то пошло не так =( Похоже, ошибка на севере</p>
       </div>
-
-       <!--об авторе--------------------------------------------------------->
+      <!--об авторе--------------------------------------------------------->
       <div class="cover__about-author">
         <section class="about-author">
           <div class="about-author__photo-me">

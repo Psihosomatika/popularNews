@@ -7,10 +7,12 @@ const cardsSearsc = document.querySelector('.cards__searsc'); //крутилка
 const cards = document.querySelector('.cards');// ul для li с новостями. Куда помещаются новости
 const result = document.querySelector('.result'); //общий блок с результатами поиска
 const serverError = document.querySelector('.server__error'); // если что-то пошло не так.
+const resultBtn = document.querySelector('.result__btn');//показать еще
+
 
 //блок поиска карточек
 const NUMBER_OF_CARDS = 3;
-const resultBtn = document.querySelector('.result__btn');
+
 const MONTS_ARR = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 
 function dateFormat(date) {
@@ -23,21 +25,24 @@ function dateFormat(date) {
 }
 
 class NewsSearchResult {
-  consrtuctor (list) {
+
+
+  constructor(list){
     this.list = list;
-    this.mumberOfCards = NUMBER_OF_CARDS;
-    this.lastCard = 0;
+    this.numberOfCards = NUMBER_OF_CARDS;
+    this.lastCard = 0; //последняя карта
   }
   _availabilityOfCards(data, card) {
-    if (this.lastCard < data.length) {
-      resultBtn.classList.add('.result__btn_on') //класс, который отображает кнопку показать еще
+    console.log(data);
+    if (data.length > this.lastCard) {
+      resultBtn.classList.add('result__btn_on') //класс, который отображает кнопку показать еще
       resultBtn.onclick = () => this.render(data,card);
     } else {
-      resultBtn.classList.remove('.result__btn_on');
+      resultBtn.classList.remove('result__btn_on');
     }
   }
+
   deleteCards () {
-    debugger;
     while (this.list.firstChild) {
       this.list.removeChild(this.list.firstChild);
     }
@@ -47,7 +52,7 @@ class NewsSearchResult {
     const articles = data;
     for (let i = this.lastCard; i < Math.min(this.lastCard + this.numberOfCards, articles.length); i++) {
       const article = articles[i];
-      this.list.appendChild (card.createdCard(
+      this.list.appendChild (card.createCard(
         article.url,
         article.urlToImage,
         article.publishedAt,
@@ -57,14 +62,14 @@ class NewsSearchResult {
       ));
     }
     this.lastCard = this.lastCard + this.numberOfCards;
-    this._checkBalance(data,card);
+    this._availabilityOfCards(data, card);
   }
 
 }
 const newsSearchResult = new NewsSearchResult(cards); //searchResult
 
 class NewsCard {
-  createCard(link, image, date, title, description, label) {
+  createCard(link, image, date, title, description, source) {
     const card = document.createElement('li');
     card.classList.add('card');
 
@@ -74,6 +79,9 @@ class NewsCard {
     cardLink.setAttribute ('target','_blank');
     cardLink.setAttribute ('rel','noopener');
 
+    if(image === null) {
+      image = 'https://images.unsplash.com/photo-1549467313-4181c186c6c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=660&q=80'
+    }
     const cardImg = document.createElement('div');
     cardImg.classList.add('card__img');
     cardImg.setAttribute('style', `background-image:url(${image})`);
@@ -93,7 +101,7 @@ class NewsCard {
 
     const cardLabel = document.createElement('span');
     cardLabel.classList.add('card__label');
-    cardLabel.textContent = label;
+    cardLabel.textContent = source;
 
     card.appendChild(cardLink);
     cardLink.appendChild(cardImg);
@@ -109,24 +117,27 @@ class NewsCard {
 const newsCard = new NewsCard();
 
 //newsapi
-const KEY = 'da509dbac2d74492a4498c044ca28d18';
-const URL_START = 'http://newsapi.org/v2/everything?q=';
-const URL_END = 'sortBy=popularity&apiKey=' + KEY;
+//const KEY = 'da509dbac2d74492a4498c044ca28d18';
+const URL_START = 'https://newsapi.org/v2/everything?q=';
+const URL_END = 'sortBy=popularity&pageSize=100&apiKey=da509dbac2d74492a4498c044ca28d18';
 
 const MS_IN_DAY = 86400000;//или лучше формулой?
 class NewsApi {
   constructor (baseUrl, parameters) {
     this.baseUrl = baseUrl;
     this.parameters = parameters;
+    this.getNews = this.getNews.bind(this);
   }
+
   async getNews(searchWord) {
     const currentDate = new Date();
     const previousDateInMs = 6 * MS_IN_DAY;
     const previousDate = new Date(currentDate.getTime()-previousDateInMs);
     const fromDate = previousDate.toISOString().slice(0, 10);
     const toDate = currentDate.toISOString().slice(0,10);
+    console.log(`${this.baseUrl}${searchWord}&from=${fromDate}&to=${toDate}&language=ru&${this.parameters}`);
 
-    const res = await fetch(`${this.baseUrl}${searchWord}$from=${fromDate}&to=${toDate}&language=ru&${this.parameters}`);
+    const res = await fetch(`${this.baseUrl}${searchWord}&from=${fromDate}&to=${toDate}&language=ru&${this.parameters}`);
     return await (res.ok ? Promise.resolve(res.json()) : Promise.reject(`Ошибка: ${res.status}`));
   }
 }
@@ -136,8 +147,8 @@ const newsApi = new NewsApi(URL_START, URL_END);
 
 //валидация
 function validateInput() {
-  if (infoInput === ""){
-    infoInput.setCustomValidity('Введите ключевое слово');
+  if (infoInput.value === ""){
+    infoInput.setCustomValidity('Нужно ввести ключевое слово');
     return false;
   } else {
     infoInput.setCustomValidity('');
@@ -163,20 +174,23 @@ function handlerSearch() {
   cardsNothingFound.classList.remove('cards__nothing-found_on');
   serverError.classList.remove('server__error_on');
   infoBtn.setAttribute('disabled', true);
-  infoInput.setAttribute('disabled', true);
+
+  //infoInput.setAttribute('disabled', true);//возможно не стоит блокировать поле ввода. Проверить!
+
 
   if (validateInput()) {
 
     newsApi.getNews(infoInput.value)
 
-    .then((res) => {
-      checkResult(res.articles);
-      trasferData(infoInput.value, res);
+    .then((resultat) => {
+      checkResult(resultat.articles);
+      trasferData(infoInput.value, resultat);
+
     })
 
     .catch((err) => {
       console.log(err);
-      result.classList.remove('result_on');
+      result.classList.add('result_on');
       serverError.classList.add('server__error_on');
       cardsNothingFound.classList.remove('cards__nothing-found_on');
     })
@@ -188,14 +202,15 @@ function handlerSearch() {
     })
 
   } else {
-    result.classList.remove('result_on');
     infoBtn.removeAttribute('disabled');
     renderPreloader(false);
+    result.classList.remove('result_on');
   }
+  infoInput.value = '';
 };
 
-function checkResult (res) {
-  if (res.length == 0) {
+function checkResult(resultat) {
+  if (resultat.length == 0) {
     localStorage.clear();
     cardsNothingFound.classList.add('cards__nothing-found_on');
     serverError.classList.remove('server__error_on');
@@ -203,7 +218,8 @@ function checkResult (res) {
   } else {
     cardsNothingFound.classList.remove('cards__nothing-found_on');
     result.classList.add('result_on');
-    newsSearchResult.render(res, newsCard);
+    newsSearchResult.render(resultat, newsCard);
+    console.log(newsCard)
   }
 };
 
@@ -218,8 +234,9 @@ function trasferData(word, data) {
 
 if(localStorage.getItem('info') !== null) {
   infoInput.value = localStorage.getItem('findingWord');
+  const cardsInfo = JSON.parse(localStorage.getItem('info'));
   result.classList.add('result_on');
-  checkResult(JSON.parse(localStorage.getItem('info')).articles);
+  checkResult(cardsInfo.articles);
 }
 
 infoInput.addEventListener('input', validateInput);
