@@ -238,6 +238,6 @@ if(localStorage.getItem('info') !== null) {
   result.classList.add('result_on');
   checkResult(cardsInfo.articles);
 }
-
+console.log(RT)
 infoInput.addEventListener('input', validateInput);
 infoForm.addEventListener('submit', handlerSearch);

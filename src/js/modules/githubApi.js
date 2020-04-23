@@ -9,3 +9,4 @@ class GithubApi {
     .then(res => res.ok ? Promise.resolve(res.json()) : Promise.reject(`Ошибка: ${res.status}`))
   }
 }
+

@@ -75,3 +75,4 @@ function renderGraph(obj) {
 
 dates();
 mentionsPerDay();
+console.log(dates);

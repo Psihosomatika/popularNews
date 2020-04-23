@@ -9,3 +9,4 @@ const NUMBER_OF_CARDS = 3;
 const MS_IN_DAY = 86400000;//или лучше формулой?
 //GithubApi
 const GITHUB_URL = 'https://api.github.com/repos/Psihosomatika/popularNews/commits';
+
