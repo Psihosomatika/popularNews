@@ -1,15 +1,5 @@
 import '../pages/index.css';
-const MS_IN_DAY = 86400000;//или лучше формулой?
-
-const data = JSON.parse(localStorage.getItem('info'));
-const keyWord = localStorage.getItem('findingWord');
-const resultKeyWord = document.querySelector('keyword');//searchPharase
-const numberOfNewsItems = document.querySelector('number-of-news-items');//weecCount
-const month = document.querySelector('month');//diagramMonth
-const mentions = document.querySelector('mentions');//titleCount
-const weekday = document.querySelector('weekday');//день недели diagramDate
-const graph = document.querySelector('graph');//синяя полоса
-const item = document.querySelector('item');//количество упоминаний в день graph (и полоса и число)
+import {MS_IN_DAY, data, keyWord, resultKeyWord, numberOfNewsItems, month, mentions, weekday, graph, item } from '../js/constants/constants.js';
 
 resultKeyWord.textContent = '«' + localStorage.getItem('findingWord') + '»';
 numberOfNewsItems.textContent = data.totalResults;
@@ -20,7 +10,7 @@ function showMonth() {
   const theDesiredMonth = new Date(data.articles[0].publishedAt.slice(0,10));
   return theDesiredMonth.toLocaleDateString('ru', { month: 'long' })
 }
-//countPharse
+
 function theCountingOfReferences(key, articles) {
   let count = 0;
   articles.forEach((i) => {
@@ -43,6 +33,7 @@ function mentionsPerDay() {
       days[daysMention] = 1;
     }
   })
+
   renderGraph(days);
 }
 
@@ -65,14 +56,18 @@ function renderDates(arr) {
 }
 
 function renderGraph(obj) {
+  const arrDay = Object.values(obj);
+  function getMaxOfArray(arrDay) {
+    return Math.max.apply(null, arrDay);
+  }
+  let max = getMaxOfArray(arrDay);
   for(let i = 0; i < Object.values(obj).length; i++) {
-
     item[i].textContent = Object.values(obj)[i];
-    const statisticalSeries = Object.values(obj)[i]/data.totalResults*100;
-    graph[i].style.width = `${statisticalSeries}`
+    const statisticalSeries = Object.values(obj)[i]/max*100;
+    console.log(`${statisticalSeries}%`);
+    graph[i].style.width = `${statisticalSeries}%`
   }
 }
 
 dates();
 mentionsPerDay();
-console.log(dates);

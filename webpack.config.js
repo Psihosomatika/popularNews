@@ -12,8 +12,8 @@ const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
   entry: {
     main: './src/index.js',
-    about: './src/about.js',
-    analitica: './src/analitica.js'
+    about: './src/about/about.js',
+    analitica: './src/analytics/analitica.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
