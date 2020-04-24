@@ -564,6 +564,7 @@
   position: relative;
   top: 12px;
 }
+
 .carusel__block {
   position: relative;
   width: 260px;
@@ -571,6 +572,11 @@
 }
 .carusel__photo {
   width: 48px;
+}
+.carusel__img {
+  object-fit: cover;
+  width: 48px;
+  border-radius: 100%;
 }
 .carusel__flex2 {
   position: absolute;

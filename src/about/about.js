@@ -1,30 +1,22 @@
-import '../pages/index.css';
+//import '../pages/index.css';
 
-import Flickity from 'flickity';
-
+//import Flickity from 'flickity';
+/*
 const slider = new Flickity('.carousel', {
   // Настройки плагина
   wrapAround: true,
 
 });
-
+*/
 /*  cellAlign: 'centr',
 contain: true,
 freeScroll: true,
 wrapAround: true,
 groupCells: '90%',*/
-const GITHUB_URL = 'https://api.github.com/repos/Psihosomatika/popularNews/commits';
 
-class GithubApi {
-  constructor (url) {
-    this.url = url;
-  }
-  getCommits (){
-    return fetch (url)
-    .then(res => res.ok ? Promise.resolve(res.json()) : Promise.reject(`Ошибка: ${res.status}`))
-  }
-}
-const githubApi = new GithubApi(GITHUB_URL);
+const slider = document.querySelector('.carousel');
+const GITHUB_URL = 'https://api.github.com/repos/Psihosomatika/popularNews/commits';
+const MONTS_ARR = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 
 function dateFormat(date) {
   const cardDate = document.createElement('time');
@@ -34,6 +26,20 @@ function dateFormat(date) {
   cardDate.classList.add('card__date');
   return cardDate;
 }
+
+class GithubApi {
+  constructor(url) {
+    this.url = url;
+  }
+  async getCommits() {
+    console.log(this.url);
+    const res = await fetch(this.url);
+    return await (res.ok ? Promise.resolve(res.json()) : Promise.reject(`Ошибка: ${res.status}`));
+  }
+}
+const githubApi = new GithubApi(GITHUB_URL);
+
+
 
 class CommitCard {
 
@@ -48,9 +54,6 @@ class CommitCard {
 
     const caruselBlock = document.createElement('div');
     caruselBlock.classList.add('carusel__block');
-
-    const caruselPhoto = document.createElement('div');
-    caruselPhoto.classList.add('carusel__photo');
 
     const caruselPhoto = document.createElement('div');
     caruselPhoto.classList.add('carusel__photo');
@@ -102,10 +105,10 @@ const commitsCardList = new CommitCardList(slider);
 
 githubApi.getCommits()
 .then((res) => {
-  console.log(res);
+  console.log(`res: ${res}`);
   res.forEach(cardData => commitsCardList.renderCards(commitCard.createCard(cardData)))
 })
 .catch((err) => {
-  console.log(err);
+  console.log(`err: ${err}`);
 })
 

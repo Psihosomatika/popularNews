@@ -33,7 +33,7 @@ class NewsSearchResult {
     this.lastCard = 0; //последняя карта
   }
   _availabilityOfCards(data, card) {
-    console.log(data);
+    console.log(`data: ${data}`);
     if (data.length > this.lastCard) {
       resultBtn.classList.add('result__btn_on') //класс, который отображает кнопку показать еще
       resultBtn.onclick = () => this.render(data,card);
@@ -116,32 +116,7 @@ class NewsCard {
 }
 const newsCard = new NewsCard();
 
-//newsapi
-//const KEY = 'da509dbac2d74492a4498c044ca28d18';
-const URL_START = 'https://newsapi.org/v2/everything?q=';
-const URL_END = 'sortBy=popularity&pageSize=100&apiKey=da509dbac2d74492a4498c044ca28d18';
 
-const MS_IN_DAY = 86400000;//или лучше формулой?
-class NewsApi {
-  constructor (baseUrl, parameters) {
-    this.baseUrl = baseUrl;
-    this.parameters = parameters;
-    this.getNews = this.getNews.bind(this);
-  }
-
-  async getNews(searchWord) {
-    const currentDate = new Date();
-    const previousDateInMs = 6 * MS_IN_DAY;
-    const previousDate = new Date(currentDate.getTime()-previousDateInMs);
-    const fromDate = previousDate.toISOString().slice(0, 10);
-    const toDate = currentDate.toISOString().slice(0,10);
-    console.log(`${this.baseUrl}${searchWord}&from=${fromDate}&to=${toDate}&language=ru&${this.parameters}`);
-
-    const res = await fetch(`${this.baseUrl}${searchWord}&from=${fromDate}&to=${toDate}&language=ru&${this.parameters}`);
-    return await (res.ok ? Promise.resolve(res.json()) : Promise.reject(`Ошибка: ${res.status}`));
-  }
-}
-const newsApi = new NewsApi(URL_START, URL_END);
 
 
 
