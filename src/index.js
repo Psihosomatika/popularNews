@@ -29,6 +29,7 @@ function renderPreloader (isLoading) {
 //
 function handlerSearch() {
   localStorage.clear();
+
   newsSearchResult.deleteCards();
   event.preventDefault();
   result.classList.add('result_on');
@@ -37,16 +38,12 @@ function handlerSearch() {
   serverError.classList.remove('server__error_on');
   infoBtn.setAttribute('disabled', true);
 
-
-
   if (validateInput()) {
-
     newsApi.getNews(infoInput.value)
 
     .then((resultat) => {
       checkResult(resultat.articles);
       trasferData(infoInput.value, resultat);
-
     })
 
     .catch((err) => {
@@ -71,6 +68,7 @@ function handlerSearch() {
 
 function checkResult(resultat) {
   if (resultat.length == 0) {
+
     localStorage.clear();
     cardsNothingFound.classList.add('cards__nothing-found_on');
     serverError.classList.remove('server__error_on');
@@ -84,6 +82,7 @@ function checkResult(resultat) {
 
 function trasferData(word, data) {
   const apiInfo = JSON.stringify(data);
+
   localStorage.clear();
   localStorage.setItem('info', apiInfo);
   localStorage.setItem('findingWord', word);

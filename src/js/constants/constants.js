@@ -23,11 +23,11 @@ export const cardsSearsc = document.querySelector('.cards__searsc'); //крут�
 export const result = document.querySelector('.result'); //общий блок с результатами поиска
 
 export const data = JSON.parse(localStorage.getItem('info'));
-export const keyWord = localStorage.getItem('findingWord');
-export const resultKeyWord = document.querySelector('.keyword');//searchPharase
-export const numberOfNewsItems = document.querySelector('.number-of-news-items');//weecCount
-export const month = document.querySelector('.month');//diagramMonth
-export const mentions = document.querySelector('.mentions');//titleCount
+export const keyWord = localStorage.getItem('findingWord'); //само ключевое слово
+export const resultKeyWord = document.querySelector('.keyword');//ключевое слово (место для записи)
+export const numberOfNewsItems = document.querySelector('.number-of-news-items');//Новостей за неделю:
+export const month = document.querySelector('.month');//Дата месяц
+export const mentions = document.querySelector('.mentions');//Упоминаний в заголовках:
 export const weekday = document.querySelectorAll('.weekday');//день недели diagramDate
 export const graph = document.querySelectorAll('.graph');//синяя полоса
 export const item = document.querySelectorAll('.item');//количество упоминаний в день graph (и полоса и число)

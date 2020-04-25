@@ -16,6 +16,6 @@ export default class NewsApi {
 
     const res = await fetch(`${this.baseUrl}${searchWord}&from=${fromDate}&to=${toDate}&language=ru&${this.parameters}`);
     return await (res.ok ? Promise.resolve(res.json()) : Promise.reject(`Ошибка: ${res.status}`));
+
   }
 }
-

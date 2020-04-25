@@ -7,5 +7,3 @@ export default class GithubApi {
     return await (res.ok ? Promise.resolve(res.json()) : Promise.reject(`Ошибка: ${res.status}`));
   }
 }
-
-

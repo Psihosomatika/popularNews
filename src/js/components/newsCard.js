@@ -14,12 +14,13 @@ export default class NewsCard {
     cardLink.setAttribute ('target','_blank');
     cardLink.setAttribute ('rel','noopener');
 
-    if(image === null) {
-      image = '../../images/x.jpeg';
+    if (image === null) {
+      image = 'https://bananavape.ru/img/nophoto.jpg';
     }
     const cardImg = document.createElement('div');
     cardImg.classList.add('card__img');
-    cardImg.setAttribute('style', `background-image:url(${image})`);
+    cardImg.setAttribute('style', `background-image:url('${image}')`);
+
 
     const cardDate = dateFormat(date);
 

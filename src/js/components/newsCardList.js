@@ -6,11 +6,11 @@ export default class NewsSearchResult {
   constructor(list){
     this.list = list;
     this.numberOfCards = NUMBER_OF_CARDS;
-    this.lastCard = 0; //последняя карта
+    this.lastCard = 0;
   }
   _availabilityOfCards(data, card) {
     if (data.length > this.lastCard) {
-      resultBtn.classList.add('result__btn_on') //класс, который отображает кнопку показать еще
+      resultBtn.classList.add('result__btn_on');
       resultBtn.onclick = () => this.render(data,card);
     } else {
       resultBtn.classList.remove('result__btn_on');

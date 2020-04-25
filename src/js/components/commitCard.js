@@ -50,4 +50,3 @@ export default class CommitCard {
     return caruselCell;
   }
 }
-

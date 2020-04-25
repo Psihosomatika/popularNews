@@ -7,26 +7,20 @@ import CommitCard from '../js/components/commitCard.js'
 import CommitCardList from '../js/components/commitCardList.js';
 import {GITHUB_URL} from '../js/constants/constants.js';
 
-
-
 const slider = new Flickity('.carousel', {
-  // Настройки плагина
   wrapAround: true,
-
+  /*  cellAlign: 'centr',
+  contain: true,
+  freeScroll: true,
+  wrapAround: true,
+  groupCells: '90%',*/
 });
 const commitsCardList = new CommitCardList(slider);
 const githubApi = new GithubApi(GITHUB_URL);
 const commitCard = new CommitCard();
-/*  cellAlign: 'centr',
-contain: true,
-freeScroll: true,
-wrapAround: true,
-groupCells: '90%',*/
-
 
 githubApi.getCommits()
 .then((res) => {
-  console.log(`res: ${res}`);
   res.forEach(cardData => commitsCardList.renderCards(commitCard.createCard(cardData)))
 })
 .catch((err) => {

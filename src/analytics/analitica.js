@@ -3,7 +3,7 @@ import {MS_IN_DAY, data, keyWord, resultKeyWord, numberOfNewsItems, month, menti
 
 resultKeyWord.textContent = '«' + localStorage.getItem('findingWord') + '»';
 numberOfNewsItems.textContent = data.totalResults;
-mentions.textContent = theCountingOfReferences(keyWord, data.articles);
+mentions.textContent = countingOfReferences(keyWord, data.articles);
 month.textContent = '(' + showMonth() + ')';
 
 function showMonth() {
@@ -11,7 +11,7 @@ function showMonth() {
   return theDesiredMonth.toLocaleDateString('ru', { month: 'long' })
 }
 
-function theCountingOfReferences(key, articles) {
+function countingOfReferences(key, articles) {
   let count = 0;
   articles.forEach((i) => {
     i.title = i.title.toLowerCase();
@@ -33,7 +33,6 @@ function mentionsPerDay() {
       days[daysMention] = 1;
     }
   })
-
   renderGraph(days);
 }
 
@@ -45,10 +44,11 @@ function dates() {
     const date = new Date(new Date().getTime()-(i*MS_IN_DAY)).toLocaleDateString('ru', {weekday: 'short'});
     const format = day + ', ' + date;
     dateObj.push(format);
+
   }
   renderDates(dateObj);
 }
-//заполнение дня недели
+
 function renderDates(arr) {
   arr.forEach((date, index) => {
     weekday[index].textContent = date;
@@ -57,6 +57,7 @@ function renderDates(arr) {
 
 function renderGraph(obj) {
   const arrDay = Object.values(obj);
+
   function getMaxOfArray(arrDay) {
     return Math.max.apply(null, arrDay);
   }
@@ -64,8 +65,7 @@ function renderGraph(obj) {
   for(let i = 0; i < Object.values(obj).length; i++) {
     item[i].textContent = Object.values(obj)[i];
     const statisticalSeries = Object.values(obj)[i]/max*100;
-    console.log(`${statisticalSeries}%`);
-    graph[i].style.width = `${statisticalSeries}%`
+    graph[i].style.width = `${statisticalSeries}%`;
   }
 }
 
