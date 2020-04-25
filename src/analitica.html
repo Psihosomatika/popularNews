@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.analitica.css %>">
   <link rel="icon" href="<%=require('./images/Favicon.png').default%>">
-  <title>О проекеу</title>
+  <title>О проекте</title>
 </head>
 <body>
   <div class="page">
@@ -33,15 +33,15 @@
         <section class="analitica">
           <p class="section"><span class="section_black">Главная</span>/ Аналитика</p>
           <div class="analitica__reply">
-            <h2 class="analitica__title">Вы спросили: «Путешествия»</h2>
-            <p class="analitica__text">Новостей за неделю: <span class="bold">34324</span></p>
-            <p class="analitica__text">Упоминаний в заголовках: <span class="bold">235</span></p>
+            <h2 class="analitica__title">Вы спросили: <span class="keyword">nhfnfnf</span></h2><!--«Путешествия»-->
+            <p class="analitica__text">Новостей за неделю: <span class="number-of-news-items bold"></span></p>
+            <p class="analitica__text">Упоминаний в заголовках: <span class="mentions bold"></span></p>
           </div>
         </section>
           <div class="chart">
             <h3 class="chart__title">Аналитика по дням</h3>
             <div class="chart__block-title">
-              <p class="block__title_date">Дата (август)</p>
+              <p class="block__title_date">Дата <span class="month">(август)</span></p>
               <p class="block__title_citation">Кол-во упоминаний</p>
             </div>
             <div class="chart__data">
@@ -103,3 +103,4 @@
   <script type="module" src="<%= htmlWebpackPlugin.files.chunks.analitica.entry %>"></script>
 </body>
 </html>
+

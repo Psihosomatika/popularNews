@@ -9,6 +9,7 @@
   <link rel="icon" href="<%=require('./images/Favicon.png').default%>">
   <title>О проекте</title>
 </head>
+
 <body>
   <div class="page">
     <header class="cover__header cover__header_white">
@@ -87,11 +88,12 @@
           </div>
           <!--НАУЧИТСЯ ДЕЛАТЬ ЭТОТ БЛОК СЛАЙДЕР  -->
           <div class="carousel">
+          <!-- пример карточки
             <div class="carousel-cell">
               <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
+                <time class="carusel__data">14 апреля 2019</time>
                 <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
+                  <div class="carusel__photo"><img src="./images/image-01.png"  class="carusel__img"  alt="фотография того, кто оставил коммит"></div>
                   <div class="carusel__flex2">
                     <p class="carusel__name">Антон Дмитирев</p>
                     <p class="carusel__email" >sjfd@gmail.com</p>
@@ -101,61 +103,6 @@
               </div>
             </div>
 
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"   alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
-
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"   alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
-
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
-
-            <div class="carousel-cell">
-              <div class="position">
-                <span class="carusel__data">14 апреля 2019</span>
-                <div class="carusel__block">
-                  <div class="carusel__photo"><img src="<%=require('./images/image-01.png').default%>"  alt="фотография того, кто оставил коммит"></div>
-                  <div class="carusel__flex2">
-                    <p class="carusel__name">Антон Дмитирев</p>
-                    <p class="carusel__email" >sjfd@gmail.com</p>
-                  </div>
-                </div>
-                <p class="carusel__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-              </div>
-            </div>
             <ol class="flickity-page-dots">
               <li class="dot" aria-label="Page dot 1"></li>
               <li class="dot" aria-label="Page dot 2"></li>
@@ -163,6 +110,7 @@
               <li class="dot" aria-label="Page dot 4"></li>
               <li class="dot" aria-label="Page dot 5"></li>
             </ol>
+            -->
           </div>
           <a href="https://github.com/Psihosomatika/popularNews/commits/master" class="history__link_btn link" >Открыть в GitHub</a>
         </section>
@@ -192,3 +140,5 @@
   <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>
 </html>
+
+

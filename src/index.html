@@ -12,7 +12,7 @@
 <body>
   <div class="page">
     <header>
-      <!--Логотип как бэкграунд имедж-->
+      <!--Логотип как бэкграунд-->
       <div class="cover__search"> <!--Обертка для большой картинки-->
         <div class="nav__flex">
           <p class="header__logo">NewsAnalyzer</p> <!--для размещения логотипа белый-->
@@ -31,14 +31,14 @@
           <h1 class="search__title">Что в мире творится?</h1>
           <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
           <form class="info" name="info">
-            <input type="text" minlength="1" maxlength="500" placeholder="   Политика" class="info__input" required>
+            <input type="text"  placeholder="Политика" class="info__input" >
             <button class="info__btn">Искать</button>
           </form>
         </section>
       </div>
 
     </header>
-    <!--Остновной раздел сайта================================================================-->
+    <!--Остновной раздел minlength="1" maxlength="500" required сайта================================================================-->
     <main>
       <div class="cover__results">
         <div class="result">
@@ -46,83 +46,42 @@
             <h2 class="result__title">Результаты поиска</h2>
             <a href="./analitica.html" class="link__analytics link">Посмотреть аналитику &gt;</a><!--Ссылка на страницу с аналитикой-->
           </div>
+          <!--КАРТИНКИ Карточки-->
           <ul class="cards"><!--Самый большой блок с разными стилями====================================-->
-
+            <!--Пример карточки
             <li class="card">
-              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
-              <span class="card__data">2 августа 2019</span>
-              <div>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-                <span class="card__label">Риа</span>
-              </div>
+              <a class="card__link" href="https://ria.ru">
+                <div class="card__img"></div>
+                <time class="card__date">2 августа 2019</time>
+                <div class="card__block">
+                  <h3 class="card__title">Национальное достояние – парки</h3>
+                  <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+                  <span class="card__label">Риа</span>
+                </div>
+              </a>
             </li>
-
-            <li class="card">
-              <img class="card__img" src="<%=require('./images/image_06.png').default%>" alt="фон новостной картинки">
-              <span class="card__data">2 августа 2019</span>
-              <div>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-                <span class="card__label">Лента</span>
-              </div>
-            </li>
-            <li class="card">
-              <img class="card__img" src="<%=require('./images/image_07.png').default%>" alt="фон новостной картинки">
-              <span class="card__data">2 августа 2019</span>
-              <div>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-                <span class="card__label">Медуза</span>
-              </div>
-            </li>
-            <li class="card">
-              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
-              <span class="card__data">2 августа 2019</span>
-              <div>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-                <span class="card__label">Риа</span>
-              </div>
-            </li>
-            <li class="card">
-              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
-              <span class="card__data">2 августа 2019</span>
-              <div>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-                <span class="card__label">Риа</span>
-              </div>
-            </li>
-            <li class="card">
-              <img class="card__img" src="<%=require('./images/image_08.png').default%>" alt="фон новостной картинки">
-              <span class="card__data">2 августа 2019</span>
-              <div>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-                <span class="card__label">Риа</span>
-              </div>
-            </li>
-
-
+            -->
           </ul>
+
+
           <div class="result__btn">Показать еще</div>
+          <!--Preloader-->
           <div class="cards__searsc">
             <i class="circle-preloader"></i>
             <p class="circle-preloader__text">идет поиск</p>
           </div>
-
-          <div class="cards__nothing-found">
-            <div class="nothing-found__img">
-              <img  src="<%=require('./images/not-found_v1.png').default%>" alt="Грустный смайлик">
-            </div>
-            <p class="nothing-found__mini-text">Ничего не найдено</p>
-            <p class="nothing-found__text">К сожалению по вашему запросу ничего не найдено.</p>
-          </div>
         </div>
+        <!--НИЧЕГО НЕ НАЙДЕНО-->
+        <div class="cards__nothing-found">
+          <div class="nothing-found__img">
+            <img  src="<%=require('./images/not-found_v1.png').default%>" alt="Грустный смайлик">
+          </div>
+          <p class="nothing-found__mini-text">Ничего не найдено</p>
+          <p class="nothing-found__text">К сожалению по вашему запросу ничего не найдено.</p>
+        </div>
+        <p class="server__error">Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p>
       </div>
-
-       <!--об авторе--------------------------------------------------------->
+      <!--об авторе--------------------------------------------------------->
       <div class="cover__about-author">
         <section class="about-author">
           <div class="about-author__photo-me">
