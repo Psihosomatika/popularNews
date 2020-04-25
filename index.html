@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name = "description" content="Сервис для анализа происходящих в мире событий">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles/main.d64a446471a18736dfc4.css?9606a9c0a2b7ce30bc77">
+  <link rel="icon" href="./images/Favicon.png" type="image/ico">
+  <title>Сервис для анализа происходящих в мире событий</title>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <!--Логотип как бэкграунд-->
+      <div class="cover__search"> <!--Обертка для большой картинки-->
+        <div class="nav__flex">
+          <p class="header__logo">NewsAnalyzer</p> <!--для размещения логотипа белый-->
+          <nav class="nav>">
+            <ul class="navigation">
+              <li class="navigation__li">
+                <a href="./index.html" class="navigation__link  link">Главная</a> <!--Ссылки-->
+              </li>
+              <li class="navigation__li">
+                <a href="./about.html" class="navigation__link navigation__link_underline link">О проекте</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <section class="search">
+          <h1 class="search__title">Что в мире творится?</h1>
+          <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+          <form class="info" name="info">
+            <input type="text"  placeholder="Политика" class="info__input" >
+            <button class="info__btn">Искать</button>
+          </form>
+        </section>
+      </div>
+
+    </header>
+    <!--Остновной раздел minlength="1" maxlength="500" required сайта================================================================-->
+    <main>
+      <div class="cover__results">
+        <div class="result">
+          <div class="result__block">
+            <h2 class="result__title">Результаты поиска</h2>
+            <a href="./analitica.html" class="link__analytics link">Посмотреть аналитику &gt;</a><!--Ссылка на страницу с аналитикой-->
+          </div>
+          <!--КАРТИНКИ Карточки-->
+          <ul class="cards"><!--Самый большой блок с разными стилями====================================-->
+            <!--Пример карточки
+            <li class="card">
+              <a class="card__link" href="https://ria.ru">
+                <div class="card__img"></div>
+                <time class="card__date">2 августа 2019</time>
+                <div class="card__block">
+                  <h3 class="card__title">Национальное достояние – парки</h3>
+                  <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+                  <span class="card__label">Риа</span>
+                </div>
+              </a>
+            </li>
+            -->
+          </ul>
+
+
+          <div class="result__btn">Показать еще</div>
+          <!--Preloader-->
+          <div class="cards__searsc">
+            <i class="circle-preloader"></i>
+            <p class="circle-preloader__text">идет поиск</p>
+          </div>
+        </div>
+        <!--НИЧЕГО НЕ НАЙДЕНО-->
+        <div class="cards__nothing-found">
+          <div class="nothing-found__img">
+            <img  src="./images/not-found_v1.png" alt="Грустный смайлик">
+          </div>
+          <p class="nothing-found__mini-text">Ничего не найдено</p>
+          <p class="nothing-found__text">К сожалению по вашему запросу ничего не найдено.</p>
+        </div>
+        <p class="server__error">Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p>
+      </div>
+      <!--об авторе--------------------------------------------------------->
+      <div class="cover__about-author">
+        <section class="about-author">
+          <div class="about-author__photo-me">
+            <img  class="photo" alt="фотография автора сайта" src="./images/image-03.png">
+          </div>
+          <div>
+            <h2 class="about-author__title">Об авторе</h2>
+            <p class="about-author__text">Это блок с описаением автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владете.</p>
+            <p class="about-author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+      <!--ПОДВАЛ===================================================================================-->
+    <footer class="cover__footer">
+      <section class="footer">
+        <div class="footer__block">
+          <div class="footer__block-link">
+            <a href="./index.html" class="footer__link link">Главная</a>
+            <a href="./about.html" class="footer__link link">О проекте</a>
+            <a href="https://praktikum.yandex.ru" class="footer__link link">Яндекс.Практикум</a>
+          </div>
+          <div class="footer__block-icon">
+            <a href="https://www.facebook.com/profile.php?id=100014076708503" class="link"><svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z" fill="#000"/></svg></a>
+            <a href="https://github.com/Psihosomatika" class="link"><svg width="22" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 .895C5.417.895.895 5.423.895 11c0 4.466 2.897 8.25 6.91 9.59.503.093.689-.217.689-.49 0-.242-.006-.875-.013-1.718-2.81.608-3.405-1.353-3.405-1.353-.46-1.166-1.123-1.476-1.123-1.476-.918-.627.068-.614.068-.614 1.011.074 1.551 1.042 1.551 1.042.9 1.545 2.364 1.098 2.94.838.094-.652.354-1.098.64-1.353-2.246-.254-4.603-1.123-4.603-4.993 0-1.105.39-2.004 1.042-2.711-.106-.255-.453-1.284.099-2.674 0 0 .85-.273 2.78 1.036A9.807 9.807 0 0111 5.783a9.843 9.843 0 012.531.341c1.93-1.309 2.78-1.036 2.78-1.036.551 1.39.204 2.42.098 2.674.646.707 1.036 1.606 1.036 2.71 0 3.884-2.363 4.734-4.615 4.988.36.31.689.93.689 1.873 0 1.353-.013 2.438-.013 2.773 0 .273.18.583.695.484 4.014-1.34 6.904-5.124 6.904-9.584C21.105 5.423 16.583.895 11 .895z" fill="#191717"/></svg></a>
+          </div>
+        </div>
+        <span class="footer__author">©2020 Рукавишникова Диана</span>
+
+      </section>
+    </footer>
+  </div>
+  <script src="main.b300d60059dc0726ee09.js?9606a9c0a2b7ce30bc77"></script>
+</body>
+</html>
