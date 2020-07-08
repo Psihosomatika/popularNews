@@ -1,6 +1,6 @@
 //newsapi
 export const URL_START = 'https://newsapi.org/v2/everything?q=';
-export const URL_END = 'sortBy=popularity&pageSize=100&apiKey=da509dbac2d74492a4498c044ca28d18';
+export const URL_END = 'sortBy=publishedAt&pageSize=100&apiKey=da509dbac2d74492a4498c044ca28d18';
 
 //список карточек
 export const NUMBER_OF_CARDS = 3;
